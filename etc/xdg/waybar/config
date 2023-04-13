@@ -89,7 +89,8 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        // "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -102,8 +103,19 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
+       // "format-icons": ["", ""]
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      },
     "battery": {
         "states": {
             // "good": 95,

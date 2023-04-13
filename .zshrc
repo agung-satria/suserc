@@ -105,7 +105,7 @@ lfcd () {
   fi
 }
 bindkey -s '^o' '^ulfcd\n'
-bindkey -s '^s' '^usource $HOME/.config/zsh/.zshrc\n'
+bindkey -s '^s' '^usource $HOME/.zshrc\n'
 bindkey -s '^y' '^ubc -lq\n'
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 

@@ -8,7 +8,6 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-set $alt Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -32,10 +31,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Start up
-## My startup
-exec --no-startup-id mpd
 
 ### Idle configuration
 #
@@ -64,12 +59,6 @@ exec --no-startup-id mpd
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input type:keyboard {
-    # xkb_options ctrl:nocaps
-    repeat_delay 240
-    repeat_rate 50
-}
-
 ### Key bindings
 #
 # Basics:
@@ -78,7 +67,7 @@ input type:keyboard {
     bindsym $mod+Return exec $$term
 
     # Kill focused window
-    bindsym $mod+q kill
+    bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -89,7 +78,6 @@ input type:keyboard {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
-    # hide_edge_borders smart
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -146,12 +134,6 @@ input type:keyboard {
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
-    # Moving through workspaces
-    bindsym $alt+tab workspace back_and_forth
-    bindsym $mod+o workspace next
-    bindsym $mod+Ctrl+Right workspace next
-    bindsym $mod+i workspace prev
-    bindsym $mod+Ctrl+Left workspace prev
     # We just use 1-10 as the default.
 #
 # Layout stuff:
@@ -159,13 +141,13 @@ input type:keyboard {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+m splith
-    bindsym $mod+n splitv
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    bindsym $mod+t layout tabbed
-    bindsym $mod+semicolon layout toggle split
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -178,7 +160,6 @@ input type:keyboard {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-    bindsym $mod+Shift+a focus child
 #
 # Scratchpad:
 #
@@ -191,72 +172,30 @@ input type:keyboard {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
-# floating rules
-for_window [app_id="yad"] floating enable
-for_window [class="File-roller"] floating enable
-
-## Apps specific class
-## xprop: WM_CLASS(STRING) = "<instance>", "<general/class>"
-# for_window [class="ttrm|lffm|calz|mus|gt|plsmxr|nmtt"] floating enable, move position center
-# bindsym $mod+Shift+Return exec --no-startup-id $term -c ttrm -g $fsize
-# bindsym $mod+Shift+e exec --no-startup-id $term -c lffm -g $fsize -e lfub
-# bindsym $mod+c exec --no-startup-id $term -c calz -g $fsize -e calcurse
-# bindsym $mod+Shift+m exec --no-startup-id $term -c mus -g $fsize -e ncmpcpp
-# bindsym $mod+Shift+r exec --no-startup-id $term -c gt -g $fsize -e gotop
-# bindsym $mod+Ctrl+n exec --no-startup-id $term -c nmtt -g $fsize -e nmtui
-bindsym $mod+e exec --no-startup-id $term -e lf
-bindsym $mod+Shift+f exec --no-startup-id nemo
-bindsym $mod+Shift+m exec --no-startup-id $term -e ncmpcpp
-bindsym $mod+Shift+r exec --no-startup-id $term -e htop
-bindsym $mod+Ctrl+n exec --no-startup-id $term -e nmtui
-bindsym $mod+w exec --no-startup-id firefox
-bindsym $mod+Shift+w exec --no-startup-id firefox --private-windows
-
-## Mpd
-bindsym $mod+backslash exec --no-startup-id mpc toggle
-bindsym $mod+Shift+backslash exec --no-startup-id mpc stop
-bindsym $mod+bracketright exec --no-startup-id mpc next
-bindsym $mod+bracketleft exec --no-startup-id mpc prev
-bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +5
-bindsym $mod+Shift+bracketleft exec --no-startup-id mpc seek -5
-bindsym $mod+Ctrl+bracketright exec --no-startup-id mpc seek +30
-bindsym $mod+Ctrl+bracketleft exec --no-startup-id mpc seek -30
-bindsym $mod+mod1+bracketleft exec --no-startup-id mpc repeat && mpc single
-bindsym $mod+mod1+bracketright exec --no-startup-id mpc random
-
-## Screenshot
-# fullscreen and save
-bindsym Print exec --no-startup-id grim $HOME/Pictures/$(date +"Screenshot_%Y-%m-%d_%H-%M-%S.png") && notify-send "🖼️ Screenshot saved in ~/Pictures"
-# area and save
-bindsym Shift+Print exec --no-startup-id grim  -g "$(slurp)" ~/Pictures/$(date +"Screenshot_%Y-%m-%d_%H-%M-%S.png") && notify-send "🖼️ Screenshot area saved in ~/Pictures"
-# area and copy
-bindsym $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy && notify-send "🖼️ Screenshot area copied to clipboard"
-
 #
 # Resizing containers:
 #
 mode "resize" {
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
-    bindsym $right resize grow width 20px
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
 
-    bindsym Left resize shrink width 20px
-    bindsym Down resize grow height 20px
-    bindsym Up resize shrink height 20px
-    bindsym Right resize grow width 20px
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
 
+    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-## Resize
-bindsym $mod+Ctrl+h resize shrink width 4 px or 4 ppt
-bindsym $mod+Ctrl+j resize grow height 4 px or 4 ppt
-bindsym $mod+Ctrl+k resize shrink height 4 px or 4 ppt
-bindsym $mod+Ctrl+l resize grow width 4 px or 4 ppt
 
 #
 # Status Bar:
@@ -277,6 +216,5 @@ bindsym $mod+Ctrl+l resize grow width 4 px or 4 ppt
 #    }
 #}
 
-# include /etc/sway/config.d/*.conf
-include ~/.config/sway/config.d/50-openSUSE.conf
+include /etc/sway/config.d/*.conf
 include ~/.config/sway/config.d/*

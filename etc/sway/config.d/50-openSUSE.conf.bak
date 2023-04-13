@@ -79,17 +79,9 @@ bindsym $mod+Shift+n exec $toggle_notification
 # openSUSE theme
 default_border pixel 2
 gaps inner 10
-# client.focused #6da741 #173f4f #73ba25
-# client.unfocused #00a489 #173f4f #35b9ab
-# client.focused_inactive #6da741 #00a489 #173f4f
-
-# client.focused #6da741 #00a489 #73ba25
-# client.unfocused #00a489 #173f4f #35b9ab
-# client.focused_inactive #6da741 #287855 #173f4f
-
-client.focused #6da741 #199786 #73ba25
+client.focused #6da741 #173f4f #73ba25
 client.unfocused #00a489 #173f4f #35b9ab
-client.focused_inactive #6da741 #1B6C84 #173f4f
+client.focused_inactive #6da741 #00a489 #173f4f
 
 set $wob wob --config /etc/sway/wob/wob.ini
 
