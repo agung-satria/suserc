@@ -1,0 +1,104 @@
+sudo zypper ref
+ping google.com
+ping 192.168.10.1
+sudo zypper ref
+ping google.com
+sudo zypper ref
+reboot
+sudo reboot
+sudo zypper ref
+sudo zypper dup
+sudo hwinfo --gfxcard | grep Model
+history
+cat /proc/sys/vm/swappiness # 60 (default)
+sudo nano /etc/sysctl.conf
+cat /proc/sys/vm/swappiness # 10
+which opi
+sudo zypper install opi
+opi codecs
+sudo fc-cache -fv
+echo $PATH
+ls .local/bin/
+sudo zypper in git
+git config --global user.name "Agung Satria"
+git config --global user.email "xxxxxxxxxxxxxxxxxxxxxxxxxgmail.com"
+git config --global init.defaultBranch main
+git config --global color.ui auto
+git config --global pull.rebase false
+git config --get user.name
+git config --get user.email
+ssh-keygen -t ed25519 -C xxxxxxxxxxxxxxxxxxxxxxxx@gmail.com
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+git clone git@github.com:agung-satria/dotfiles.git .dotfiles
+sudo zypper ref
+sudo zypper in kitty
+cd .dotfiles/
+ls
+cd .config/
+ls
+cp -r kitty/ ~/.config/
+neofe
+nvim .config/kitty/kitty.conf 
+sudo zypper install neovim
+nvim .config/kitty/kitty.conf 
+nvim .bashrc 
+source .bashrc 
+v
+ls
+sudo ./install.sh 
+ls
+./Telegram 
+zsh
+sudo zypper install zsh fzf
+zsh
+echo $PATH
+zsh
+chsh -s $(which zsh)
+
+
+mkdir .config/zsh
+cd .dotfiles/.config/zsh
+cp .dircolors ~/.config/zsh
+git
+echo $PATH
+rm .zsh_history
+echo teset
+echo $EDITOR
+history
+zsh
+v .zshrc
+F
+cd .local/bin
+cp {se,ce} ~/.local/bin
+vz
+sudo zypper in tmux
+cp -r tmux ~/.config
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+t
+cat .zshrc
+vt
+touch test
+git status
+rm test
+ping google.com
+sudo zypper ref
+sudo zypper search mpc
+sudo zypper install mpc mpd ncmpcpp
+sudo zypper install mpclient mpd ncmpcpp
+cd .config
+ls
+cp -r {mpd,ncmpcpp} ~/.config
+cf
+ncmpcpp
+sudo zypper search gotop
+mpd
+htop
+ce
+cdd
+cd
+lfcd
+f
+neofetch
+clear
+v .bash_history
