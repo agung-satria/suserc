@@ -1,0 +1,35 @@
+[kitty-2.desktop][Global Shortcuts]
+_launch=Meta+Return
+
+[kitty-3.desktop][Global Shortcuts]
+_launch=Meta+Shift+E
+
+[kitty-4.desktop][Global Shortcuts]
+_launch=Meta+M
+
+[kitty-5.desktop][Global Shortcuts]
+_launch=Meta+Shift+R
+
+[mpc-2.desktop][Global Shortcuts]
+_launch=Meta+|
+
+[mpc-3.desktop][Global Shortcuts]
+_launch=Meta+]
+
+[mpc-4.desktop][Global Shortcuts]
+_launch=Meta+[
+
+[mpc-5.desktop][Global Shortcuts]
+_launch=Meta+}
+
+[mpc-6.desktop][Global Shortcuts]
+_launch=Meta+{
+
+[mpc-7.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+[
+
+[mpc-8.desktop][Global Shortcuts]
+_launch=Meta+Ctrl+]
+
+[mpc.desktop][Global Shortcuts]
+_launch=Meta+\\
