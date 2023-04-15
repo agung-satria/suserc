@@ -82,6 +82,9 @@ input type:keyboard {
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Toggle waybar
+    bindsym $mod+b exec /etc/sway/script/toggle-waybar
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -203,7 +206,7 @@ for_window [class="File-roller"] floating enable
 # bindsym $mod+Shift+r exec --no-startup-id $term -c gt -g $fsize -e gotop
 # bindsym $mod+Ctrl+n exec --no-startup-id $term -c nmtt -g $fsize -e nmtui
 bindsym $mod+e exec --no-startup-id $term -e lf
-bindsym $mod+Shift+f exec --no-startup-id nemo
+bindsym $mod+Shift+f exec --no-startup-id dolphin
 bindsym $mod+Shift+m exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+r exec --no-startup-id $term -e htop
 bindsym $mod+Ctrl+n exec --no-startup-id $term -e nmtui
