@@ -222,7 +222,7 @@ vn="$EDITOR ~/.config/nvim" \
 vx="$EDITOR ~/.config/x11/xinitrc" \
 vt="$EDITOR ~/.config/tmux/tmux.conf" \
 vz="$EDITOR ~/.zshrc" \
-vs="cd ~/.config/sway/ && $EDITOR config" \
+vs="cd /etc/sway/ && $EDITOR config" \
 
 ##############
 ### PROMPT ###

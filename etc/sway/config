@@ -74,7 +74,7 @@ input type:keyboard {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $$term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+q kill
@@ -84,6 +84,9 @@ input type:keyboard {
 
     # Toggle waybar
     bindsym $mod+b exec /etc/sway/script/toggle-waybar
+
+    # New empty workspace
+    bindsym $mod+c exec /etc/sway/script/empty_workspace
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -149,6 +152,7 @@ input type:keyboard {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # Moving through workspaces
+    bindsym $mod+tab workspace back_and_forth
     bindsym $alt+tab workspace back_and_forth
     bindsym $mod+o workspace next
     bindsym $mod+Ctrl+Right workspace next
@@ -222,8 +226,8 @@ bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +5
 bindsym $mod+Shift+bracketleft exec --no-startup-id mpc seek -5
 bindsym $mod+Ctrl+bracketright exec --no-startup-id mpc seek +30
 bindsym $mod+Ctrl+bracketleft exec --no-startup-id mpc seek -30
-bindsym $mod+mod1+bracketleft exec --no-startup-id mpc repeat && mpc single
-bindsym $mod+mod1+bracketright exec --no-startup-id mpc random
+bindsym $mod+$alt+bracketleft exec --no-startup-id mpc repeat && mpc single
+bindsym $mod+$alt+bracketright exec --no-startup-id mpc random
 
 ## Screenshot
 # fullscreen and save
